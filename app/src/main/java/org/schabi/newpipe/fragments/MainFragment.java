@@ -108,6 +108,9 @@ public class MainFragment extends BaseFragment implements TabLayout.OnTabSelecte
         binding.mainTabLayout.setupWithViewPager(binding.pager);
         binding.mainTabLayout.addOnTabSelectedListener(this);
 
+       // Hide tabs
+        binding.pager.setVisibility(View.GONE);
+
         setupTabs();
         updateTabLayoutPosition();
     }

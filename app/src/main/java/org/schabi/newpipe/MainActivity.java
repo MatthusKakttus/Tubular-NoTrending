@@ -270,6 +270,11 @@ public class MainActivity extends AppCompatActivity {
         int kioskMenuItemId = 0;
 
         for (final String ks : service.getKioskList().getAvailableKiosks()) {
+            //Remove Trending from Drawer Menu
+            if ("Trending".equals(ks)) {
+                continue;
+            }
+
             drawerLayoutBinding.navigation.getMenu()
                     .add(R.id.menu_tabs_group, kioskMenuItemId, 0, KioskTranslator
                             .getTranslatedKioskName(ks, this))
